@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a working mood board. Big editorial images and film up top, then the evidence (ad accounts, products) set like contact-sheet frames with mono captions. */
 :root{
   --bg:#f7f6f4; --surface:#ffffff; --ink:#17141a; --muted:#625b66; --line:#e3dfe2;
   --wine:#6e1f3a; --kraft:#b98b5e; --wine-soft:#f3e6eb;
@@ -113,71 +112,88 @@ footer{padding-block:24px}
   .prod{grid-template-columns:minmax(0,1fr) 88px}
 }
 @media (prefers-reduced-motion:no-preference){ .board img,.hero-board img{transition:transform .4s ease} .board figure:hover img{transform:scale(1.015)} }
-</style>
-</head>
-<body>
 
+/* v2 additions */
+.reel{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;max-height:640px}
+.reel figcaption{padding:14px 16px;display:grid;gap:6px}
+.reel h3{font-size:22px;font-weight:700;font-stretch:90%}
+.reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.reels.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
+.feature{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:40px;align-items:center;background:#111014;color:#f1edf0;border-radius:8px;padding:28px;overflow:hidden}
+.feature video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:#000}
+.feature .logo{height:34px;width:auto;margin-bottom:18px}
+.feature h3{font-size:clamp(34px,4.4vw,56px);font-weight:900;font-stretch:76%;text-transform:uppercase;line-height:.95}
+.feature p{color:#c9c1cc;max-width:46ch;margin:16px 0 0}
+.feature .label{color:#a79fab}
+.feature .stats{margin-top:22px}
+.feature .stats li{color:#a79fab}.feature .stats strong{color:#e07a9b}
+.sub{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:48px 0 18px}
+.sub h3{font-size:clamp(26px,3.4vw,38px);font-weight:800;font-stretch:82%;text-transform:uppercase}
+.sub p{margin:0;color:var(--muted);max-width:56ch}
+.pill{display:inline-block;font:500 12px/1 var(--mono);padding:6px 9px;border-radius:999px;background:var(--wine-soft);color:var(--wine)}
+@media (max-width:820px){.reels,.reels.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.feature{grid-template-columns:minmax(0,1fr);padding:18px;gap:24px}.feature video{max-height:560px}}
+@media (max-width:480px){.reels,.reels.two{grid-template-columns:minmax(0,1fr)}}
+</style>
 
 <header class="wrap hero">
   <div class="hero-top">
     <span class="label">Portfolio · 2026</span>
-    <span class="label">Maputo, Mozambique · UTC+2 · EN / PT / ES</span>
+    <span class="label">Maputo, Mozambique · UTC+2 · PT / EN / ES</span>
   </div>
   <div class="hero-grid">
     <div>
       <h1 class="name">Kelsey<span>Xavier</span></h1>
-      <p class="lede">I plan, shoot, edit and run the ads myself, then build the systems that turn the clicks into conversations.</p>
+      <p class="lede">Content people stop scrolling for. Ads that bring in leads. And the systems that make sure no lead goes cold.</p>
       <ul class="facts">
-        <li>Meta &amp; TikTok Ads</li>
-        <li>Content production</li>
-        <li>GoHighLevel CRM</li>
-        <li>Framer &amp; Webflow</li>
+        <li>Ronil · Debonairs · MilkyLane · Parfois</li>
+        <li>400+ Meta leads for US businesses</li>
+        <li>Shoot, edit, launch</li>
         <li>Founder × 2</li>
       </ul>
     </div>
     <div class="hero-board">
       <img class="tall" src="img/DSC06755.jpg" alt="Model seated on steps in a wine-coloured dress with a woven bag, Parfois editorial shoot in Maputo">
-      <img class="sq" src="img/IMG_1216.jpg" alt="Couple holding Parfois shopping bags">
-      <img class="sq" src="img/cc4d1abc-c88e-403b-91b2-19a9ca4cc44a.jpg" alt="Close-up of hands holding a patterned handbag">
+      <img class="sq" src="img/p-debonairs.jpg" alt="Debonairs pizza being built in the kitchen">
+      <img class="sq" src="img/p-milkylane.jpg" alt="MilkyLane waffles plated with cream">
     </div>
   </div>
 </header>
 
-<section id="film">
+<section id="brands">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="label">01 · Brand content</span><h2>Film &amp; reels</h2></div>
-      <p>Campaign films and reels for Parfois in the Mozambique market. Concept, styling direction, shoot and edit done in house, cut for vertical feeds where the first two seconds decide everything.</p>
+      <div><span class="label">01 · Brands</span><h2>Trusted with their feed</h2></div>
+      <p>From a car dealer to a fashion house, food brands to furniture. Each one needed content that looked like them and worked on a phone screen. That is the job.</p>
     </div>
-    <div class="films">
-      <figure class="film">
-        <video controls playsinline preload="metadata" src="vid/match-3.mp4#t=0.5" aria-label="It's a Match #3, Parfois campaign film"></video>
-        <figcaption><h3>It's a Match #3</h3><span class="cap"><b>Parfois</b> · campaign film · styling, direction, shoot, edit</span></figcaption>
-      </figure>
-      <figure class="film">
-        <video controls playsinline preload="metadata" src="vid/card-spot.mp4#t=0.5" aria-label="Parfois card spot reel"></video>
-        <figcaption><h3>Card Spot</h3><span class="cap"><b>Parfois</b> · reel · shot and edited in house</span></figcaption>
-      </figure>
-    </div>
-
-    <div class="board" aria-label="Editorial photography">
-      <figure><img src="img/DSC06961.jpg" alt="Three models outdoors by the sea in sunglasses"><figcaption class="cap">Editorial · Parfois</figcaption></figure>
-      <figure><img src="img/DSC06745.jpg" alt="Model in a wine dress with sunglasses and gold accessories on a city street"><figcaption class="cap">Accessories close-up</figcaption></figure>
-      <figure><img src="img/DSC06872.jpg" alt="Hands exchanging a red and a beige wallet"><figcaption class="cap">Product detail · wallets</figcaption></figure>
-      <figure><img src="img/DSC06827.jpg" alt="Three people walking out of a mall carrying Parfois bags"><figcaption class="cap">Lifestyle · mall exit</figcaption></figure>
-      <figure><img src="img/f4923fc0-fc95-4340-9291-b5c205c714d2.jpg" alt="Portrait of a model with sunglasses on her head and gold earrings"><figcaption class="cap">Portrait · natural light</figcaption></figure>
-      <figure><img src="img/DSC06904.jpg" alt="Hands with rings holding fresh coconuts with straws"><figcaption class="cap">Styled detail · rings</figcaption></figure>
-    </div>
+    <article class="feature">
+      <video class="auto" muted loop playsinline controls preload="none" poster="img/p-ronil.jpg" src="vid/ronil-bt50.mp4" aria-label="Ronil, Mazda BT-50 reel"></video>
+      <div>
+        <img class="logo" src="img/ronil-logo.png" alt="Ronil">
+        <span class="label">Ronil · automotive · Sep 2024 to Jan 2025</span>
+        <h3>Mazda BT-50 at golden hour</h3>
+        <p>A sunset drive along the Maputo coast with the bridge on the horizon, feature callouts on screen, built for Facebook Reels. Social strategy, copy and publishing for the brand.</p>
+        <ul class="stats"><li><strong>307</strong>reactions on Facebook</li><li><strong>34s</strong>vertical reel</li></ul>
+      </div>
+    </article>
+    <ul class="brands" style="margin-top:28px">
+      <li>Ronil<small>Automotive</small></li>
+      <li>Debonairs Pizza<small>Famous Brands · QSR</small></li>
+      <li>MilkyLane<small>Desserts</small></li>
+      <li>Parfois<small>Fashion &amp; accessories</small></li>
+      <li>Sweet Home<small>Furniture &amp; décor</small></li>
+    </ul>
   </div>
 </section>
 
-<section id="ads">
+<section id="systems">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="label">02 · Paid social</span><h2>Lead generation</h2></div>
-      <p>Meta lead campaigns for US home services businesses, 2024. These are the Ads Manager views as they were, so every number below can be checked against the screenshot above it.</p>
+      <div><span class="label">02 · Systems</span><h2>Built to bring in leads</h2></div>
+      <p>Ads are half of it. I build what happens after the click: lead forms, a CRM pipeline with the source on every lead, and follow-up that runs on its own. Every number comes straight from the Ads Manager screenshot it sits under.</p>
     </div>
     <div class="ads">
+
       <figure class="ad">
         <div class="shot"><img src="img/ads3.png" alt="Meta Ads Manager: 4 campaigns, 40 on-Facebook leads at $42.39 cost per result"></div>
         <figcaption>
@@ -214,16 +230,9 @@ footer{padding-block:24px}
           <p class="note">Two ad sets kept live, one for decking and one for basements, with the weaker audiences switched off early.</p>
         </figcaption>
       </figure>
-    </div>
-  </div>
-</section>
+        </div>
 
-<section id="build">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="label">03 · Things I built</span><h2>Products &amp; brands</h2></div>
-      <p>Two businesses started in 2026, built and run on my own, from the product to the go-to-market.</p>
-    </div>
+    <div class="sub"><h3>Products I built myself</h3><p>Two businesses launched in 2026, from code to go-to-market.</p></div>
     <div class="products">
       <article class="prod">
         <div>
@@ -246,21 +255,56 @@ footer{padding-block:24px}
       </article>
     </div>
 
-    <div style="margin-top:40px">
-      <span class="label">Xavier Digital Solutions · brands I create content for</span>
-      <ul class="brands" style="margin-top:14px">
-        <li>Parfois<small>Fashion &amp; accessories</small></li>
-        <li>Debonairs Pizza<small>Famous Brands · QSR</small></li>
-        <li>MilkyLane<small>Desserts</small></li>
-        <li>Sweet Home<small>Furniture</small></li>
-        <li>Ronil Lda<small>Multi-brand</small></li>
-      </ul>
-      <div class="tools">
+        <div class="tools">
         <div><span class="label">Ads</span><p>Meta Ads Manager, TikTok Ads, Pixel &amp; Events Manager</p></div>
         <div><span class="label">Creative</span><p>Final Cut Pro, Motion, CapCut, Canva, Sony mirrorless</p></div>
         <div><span class="label">Systems</span><p>GoHighLevel pipelines &amp; automation, Instantly</p></div>
         <div><span class="label">Web</span><p>Framer, Webflow, Next.js</p></div>
       </div>
+  </div>
+</section>
+
+<section id="campaigns">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">03 · Campaigns</span><h2>Made to be watched</h2></div>
+      <p>Concept, styling, shoot and edit, cut for vertical feeds where the first two seconds decide everything.</p>
+    </div>
+
+    <div class="sub"><h3>Parfois · It's a Match</h3><span class="pill">Directed, shot &amp; edited</span></div>
+    <div class="reels">
+      <figure class="reel">
+        <video class="auto" muted loop playsinline controls preload="none" poster="img/p-match2.jpg" src="vid/match-2.mp4" aria-label="It's a Match #2"></video>
+        <figcaption><span class="label">Campaign film</span><h3>It's a Match #2</h3><span class="cap"><b>Parfois Mozambique</b> · campaign film</span></figcaption>
+      </figure>
+      <figure class="reel">
+        <video class="auto" muted loop playsinline controls preload="none" poster="img/p-match3.jpg" src="vid/match-3.mp4" aria-label="It's a Match #3"></video>
+        <figcaption><span class="label">Campaign film</span><h3>It's a Match #3</h3><span class="cap"><b>Parfois Mozambique</b> · campaign film</span></figcaption>
+      </figure>
+      <figure class="reel">
+        <video class="auto" muted loop playsinline controls preload="none" poster="img/p-card.jpg" src="vid/card-spot.mp4" aria-label="Card Spot"></video>
+        <figcaption><span class="label">Reel</span><h3>Card Spot</h3><span class="cap"><b>Parfois Mozambique</b> · product reel</span></figcaption>
+      </figure>
+    </div>
+    <div class="board" aria-label="Parfois editorial photography">
+      <figure><img src="img/DSC06961.jpg" alt="Three models outdoors by the sea in sunglasses"><figcaption class="cap">Editorial · Parfois</figcaption></figure>
+      <figure><img src="img/DSC06745.jpg" alt="Model in a wine dress with sunglasses and gold accessories on a city street"><figcaption class="cap">Accessories · street</figcaption></figure>
+      <figure><img src="img/DSC06872.jpg" alt="Hands exchanging a red and a beige wallet"><figcaption class="cap">Product detail · wallets</figcaption></figure>
+      <figure><img src="img/DSC06827.jpg" alt="Three people walking out of a mall carrying Parfois bags"><figcaption class="cap">Lifestyle · mall exit</figcaption></figure>
+      <figure><img src="img/f4923fc0-fc95-4340-9291-b5c205c714d2.jpg" alt="Portrait of a model with sunglasses on her head and gold earrings"><figcaption class="cap">Portrait · natural light</figcaption></figure>
+      <figure><img src="img/DSC06904.jpg" alt="Hands with rings holding fresh coconuts with straws"><figcaption class="cap">Styled detail · rings</figcaption></figure>
+    </div>
+
+    <div class="sub"><h3>Food that sells on mute</h3><p>Close, fast and hungry. Reels that show the product being made, so the viewer can almost taste it before the sound is on.</p></div>
+    <div class="reels two">
+      <figure class="reel">
+        <video class="auto" muted loop playsinline controls preload="none" poster="img/p-debonairs.jpg" src="vid/debonairs.mp4" aria-label="Creamy, Cheesy Pizza"></video>
+        <figcaption><span class="label">Debonairs · since May 2025</span><h3>Creamy, Cheesy Pizza</h3><span class="cap"><b>Debonairs Pizza Zimpeto</b> · from the build to the open box</span></figcaption>
+      </figure>
+      <figure class="reel">
+        <video class="auto" muted loop playsinline controls preload="none" poster="img/p-milkylane.jpg" src="vid/milkylane.mp4" aria-label="Waffle o’clock"></video>
+        <figcaption><span class="label">MilkyLane · since Feb 2025</span><h3>Waffle o’clock</h3><span class="cap"><b>MilkyLane Zimpeto Palm Square</b> · batter to plate in 19 seconds</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -268,7 +312,7 @@ footer{padding-block:24px}
 <section class="contact" id="contact">
   <div class="wrap">
     <span class="label">Open to internships and junior roles in marketing and growth</span>
-    <h2 style="margin-top:12px">Let's talk</h2>
+    <h2 style="margin-top:12px">Your brand next?</h2>
     <div class="contact-row">
       <div><span class="label">Email</span><div class="v" id="em">Kelseydiego99@gmail.com</div><button class="copy" id="copy-em" type="button" data-t="Kelseydiego99@gmail.com">Copy email</button></div>
       <div><span class="label">Phone · WhatsApp</span><div class="v">+258 85 83 27 972</div><button class="copy" id="copy-ph" type="button" data-t="+258858327972">Copy number</button></div>
@@ -287,7 +331,12 @@ document.querySelectorAll('.copy').forEach(function(b){
   });
 });
 function sel(b){var v=b.parentNode.querySelector('.v');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r)}
-</script>
 
+var vs=document.querySelectorAll('video.auto');
+if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.4});
+  vs.forEach(function(v){io.observe(v)});
+}
+</script>
 </body>
 </html>
